@@ -50,7 +50,7 @@ container_import(
         repository_ctx.path("image"),
         "-tarball",
         repository_ctx.path(repository_ctx.attr.file),
-    ])
+    ], timeout=2400)
 
     if result.return_code:
         fail("Importing from tarball failed (status %s): %s" % (result.return_code, result.stderr))
